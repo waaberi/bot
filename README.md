@@ -8,3 +8,4 @@
 - Make a fix for pluris' broken regex concerning URLs (setImage, setThumbnail, line 107 and 117)
 - Fix wikipedia disambiguation error
 - Add a proper error handler
+- Add VC capability soon
