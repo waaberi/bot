@@ -1,10 +1,20 @@
 require("dotenv").config()
+const config = require("./config/config.json")
+const Eris = require("eris")
 
-const {Client, GatewayIntentBits} = require("discord.js");
-const client = new Client({intents: [GatewayIntentBits.Guilds]});
+console.log(config)
 
-client.once('ready', () => {
-    console.log("Connected with " + client.user.tag)
-})
+const bot = new Eris(process.env.TOKEN);
 
-client.login(process.env.TOKEN)
+let commands = require("./utils/commandLoader")()
+
+bot.on("ready", () => {
+  console.log("Ready with " + bot);
+
+});
+
+bot.on("messageCreate", async (msg) => {
+    if(msg.content.startsWith(config.prefix)) require("./utils/commandParser")(msg, bot, commands, config.prefix)
+});
+
+bot.connect();
