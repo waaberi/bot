@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "eris": "^0.17.1"
+    "eris": "^0.17.1",
+    "pluris": "^0.3.7"
   }
 }

@@ -1,10 +1,8 @@
 require("dotenv").config()
 const config = require("./config/config.json")
 const Eris = require("eris")
-
-console.log(config)
-
 const bot = new Eris(process.env.TOKEN);
+require("pluris")(Eris);
 
 let commands = require("./utils/commandLoader")()
 
@@ -15,5 +13,7 @@ bot.on("ready", () => {
 bot.on("messageCreate", async (msg) => {
     if(msg.content.startsWith(config.prefix)) require("./utils/commandParser")(msg, bot, commands, config.prefix)
 });
+
+// other events will be managed later, in a new event folder
 
 bot.connect();
