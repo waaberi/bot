@@ -5,11 +5,9 @@ module.exports = () => {
     let commands = {}
     for(let folder of fs.readdirSync(path.join(__dirname, "../commands"))) {
         for(let file of fs.readdirSync(path.join(__dirname, "../commands/" + folder))) {
-            console.log(file)
             if(file.endsWith(".js")) {
                 let temp = require("../commands/" + folder + "/" + file)
                 temp.category = folder
-                //console.log("Command " + temp.name + " of category " + folder + " loaded!")
                 commands[file.replace(".js", "")] = temp
             }
         }

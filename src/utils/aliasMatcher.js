@@ -1,9 +1,10 @@
 module.exports = (commands, alias) => {
-    if(commands[alias]) return commands[alias].name
+    if(commands[alias]) return commands[alias]
     for (let command in commands) {
-        console.log(commands[command].aliases)
-        if(alias in commands[command].aliases) {
-            return command.name;
+        if(commands[command].aliases.includes(alias)) {
+            console.log("It has matched with an alias")
+            console.log(commands[command]["name"])
+            return commands[command];
         }
     }
 

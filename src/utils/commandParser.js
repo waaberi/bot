@@ -4,12 +4,9 @@ module.exports = (msg, bot, commands, prefix) => {
     let command = msg.content;
     command = command.split(" ");
     command[0] = command[0].slice(prefix.length)
-    if(aliasMatcher(commands, command[0])) {
-        console.log("Command " + command[0] + " called")
-        commands[command[0]].exec(bot, msg, command.slice(0))
-    } else {
-        console.log("Using a command has been attempted, but it is not there!")
-    }
-
-
+    let propercmd = aliasMatcher(commands, command[0]) 
+    if(propercmd) {
+        console.log("Command " + propercmd.name + " called")
+        propercmd.exec(bot, msg, command.slice(0))
+    } else bot.createMessage(msg.channel.id, `<@!${msg.author.id}>, the command you have used does not exist!`)
 }

@@ -1,7 +1,7 @@
 module.exports = {
-    name: "ping",
-    aliases: ["ping2", "ping3"],
-    description: "Replies with pong",
+    name: "mute",
+    aliases: ["timeout"],
+    description: "Mutes someone",
     exec: async (bot, msg, args) => {
         bot.createMessage(msg.channel.id, "Pong!")
     }
