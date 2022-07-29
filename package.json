@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "eris": "^0.17.1",
-    "pluris": "^0.3.7"
+    "pluris": "^0.3.7",
+    "wikipedia": "^1.1.9"
   }
 }
