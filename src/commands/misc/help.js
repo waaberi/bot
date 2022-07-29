@@ -1,7 +1,7 @@
 module.exports = {
-    name: "ban",
-    aliases: [],
-    description: "Bans someone",
+    name: "help",
+    aliases: ["commands"],
+    description: "Gives all commands",
     exec: async (bot, msg, args) => {
         bot.createMessage(msg.channel.id, "Pong!")
     }

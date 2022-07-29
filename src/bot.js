@@ -10,7 +10,6 @@ let commands = require("./utils/commandLoader")()
 
 bot.on("ready", () => {
   console.log("Ready with " + bot);
-
 });
 
 bot.on("messageCreate", async (msg) => {
